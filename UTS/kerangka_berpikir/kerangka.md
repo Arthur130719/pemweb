@@ -30,6 +30,6 @@ Database: MySQL
 API Endpoint:
 
 GET /customers
-POST /customers
-PUT /customers/:id
-DELETE /customers/:id
+POST /customers/create
+PUT /customers/{id}/edit
+DELETE /customers
