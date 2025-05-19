@@ -6,18 +6,18 @@ start
 if (User ingin menambah pelanggan?) then (Ya)
   :Isi form tambah pelanggan;
   :Klik "Simpan";
-  :Kirim data ke Backend (POST /customers);
+  :Kirim data ke Backend (POST /customers/create);
   :Backend simpan ke Database;
 elseif (User ingin mengedit pelanggan?) then (Ya)
   :Klik tombol "Edit";
   :Ubah data di form;
   :Klik "Simpan Perubahan";
-  :Kirim data ke Backend (PUT /customers/:id);
+  :Kirim data ke Backend (PUT /customers/{id}/edit);
   :Backend update ke Database;
 elseif (User ingin hapus pelanggan?) then (Ya)
   :Klik tombol "Hapus";
   :Konfirmasi penghapusan;
-  :Kirim permintaan ke Backend (DELETE /customers/:id);
+  :Kirim permintaan ke Backend (DELETE /customers);
   :Backend hapus dari Database;
 endif
 
