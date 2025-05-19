@@ -2,3 +2,5 @@ pert1/sampleapp/db/data/*
 pert1/sampleapp/src/*
 pert2/pert3/db/*
 pert2/pert3/src/*
+UTS/db/*
+UTS/src/*

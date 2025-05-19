@@ -1,0 +1,29 @@
+@startuml
+start
+
+:User membuka aplikasi web;
+:User melihat daftar pelanggan;
+if (User ingin menambah pelanggan?) then (Ya)
+  :Isi form tambah pelanggan;
+  :Klik "Simpan";
+  :Kirim data ke Backend (POST /customers);
+  :Backend simpan ke Database;
+elseif (User ingin mengedit pelanggan?) then (Ya)
+  :Klik tombol "Edit";
+  :Ubah data di form;
+  :Klik "Simpan Perubahan";
+  :Kirim data ke Backend (PUT /customers/:id);
+  :Backend update ke Database;
+elseif (User ingin hapus pelanggan?) then (Ya)
+  :Klik tombol "Hapus";
+  :Konfirmasi penghapusan;
+  :Kirim permintaan ke Backend (DELETE /customers/:id);
+  :Backend hapus dari Database;
+endif
+
+:Frontend refresh data pelanggan;
+:Backend kirim data dari Database (GET /customers);
+:Data ditampilkan ke user;
+
+stop
+@enduml
